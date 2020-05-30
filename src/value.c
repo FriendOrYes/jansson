@@ -48,6 +48,11 @@ static JSON_INLINE void json_init(json_t *json, json_type type)
 
 extern volatile uint32_t hashtable_seed;
 
+json_t *json_object_public(void)//fixed to use it with libpq
+{
+    return json_object();
+}
+
 json_t *json_object(void)
 {
     json_object_t *object = jsonp_malloc(sizeof(json_object_t));
